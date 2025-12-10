@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Secret Santa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="paper-sheet">
+        <img src="goose.png" alt="Гусак" class="goose-corner">
+        <h1>To Do List</h1>
+        <h2 class="subtext">Щоб отримати Untitled Goose Game</h2>
+        
+        <ul class="task-list">
+            <li class="checked">Посмакувати шаленої бджоли</li>
+            <li class="checked">Причіпити гусака</li>
+            <li class="checked">Відсканувати дивний код</li>
+            <li>
+                <a href="https://steamcommunity.com/profiles/76561198886575692/" target="_blank" class="action-btn">
+                    Додати дивного пса в друзі
+                </a>
+            </li>
+            <li>Порахувати 1, 2, 3, ..., n</li>
+        </ul>
+
+        <div class="footer-note">
+            <p>Honk! 🪿</p>
+        </div>
+    </div>
+
+    <script>
+        const gooseImage = document.querySelector('.goose-corner');
+        gooseImage.addEventListener('click', function() {
+            this.classList.add('goose-active');
+        });
+
+        gooseImage.addEventListener('animationend', function() {
+            this.classList.remove('goose-active');
+        });
+    </script>
+
+</body>
+</html>

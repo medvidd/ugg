@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+body {
+    background-color: #3d6bd5; 
+    font-family: 'Neucha', cursive; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.paper-sheet {
+    background-color: #fffdf0; 
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transform: rotate(-2deg); 
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #333;
+    display: inline-block;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.task-list li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 40px; 
+}
+
+.task-list li::before {
+    content: '[ ]'; 
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.task-list li.checked {
+    text-decoration: line-through; 
+    color: #777;
+}
+
+.task-list li.checked::before {
+    content: '[✔]'; 
+    color: #d9534f; 
+}
+
+.action-btn {
+    display: inline-block;
+    background-color: #ff9f43; 
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 3px 3px 0px #333;
+    transition: all 0.2s;
+    margin-top: 10px;
+    border: 2px solid #333;
+}
+
+.action-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #333;
+    background-color: #ffb773;
+}
+
+.action-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #333;
+}
+
+.subtext {
+    display: block;
+    font-size: 1rem;
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.goose-corner {
+    position: absolute; 
+    top: -50px;  
+    right: -65px; 
+    width: 200px; 
+    height: auto; 
+    transform: rotate(15deg); 
+    z-index: 10; 
+    filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.2));
+}
+
+@keyframes dizzy-goose {
+    0% { transform: rotate(15deg); } 
+    100% { transform: rotate(2175deg); } 
+}
+
+.goose-active {
+    animation: dizzy-goose 2s cubic-bezier(0.30, 0, 0.745, 0.715) forwards;
+    
+    cursor: wait; 
+}
+
+.goose-corner {
+    cursor: pointer;
+    transition: transform 0.1s; 
+}
+
+.goose-corner:active {
+    transform: scale(0.9) rotate(15deg); 
+}
